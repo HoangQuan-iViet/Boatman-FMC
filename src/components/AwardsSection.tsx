@@ -1,11 +1,12 @@
 
 import { motion } from 'framer-motion';
+import { Medal, Award, Crown } from 'lucide-react';
 
 const awards = [
-    { icon: '🥇', title: 'Huy Chương Vàng', desc: 'Top 10% học sinh xuất sắc', color: 'from-amber-200 to-yellow-500', text: 'text-amber-800' },
-    { icon: '🥈', title: 'Huy Chương Bạc', desc: 'Top 15% tiếp theo', color: 'from-gray-200 to-gray-400', text: 'text-gray-800' },
-    { icon: '🥉', title: 'Huy Chương Đồng', desc: 'Top 25% tiếp theo', color: 'from-orange-200 to-amber-700', text: 'text-amber-900' },
-    { icon: '🏆', title: 'Giải Khuyến khích', desc: 'Top 10% tiếp theo', color: 'from-blue-100 to-blue-300', text: 'text-blue-900' },
+    { icon: Medal, title: 'Huy Chương Vàng', desc: 'Top 10% học sinh xuất sắc', color: 'from-amber-200 to-yellow-500', text: 'text-amber-800', iconColor: 'text-yellow-600' },
+    { icon: Medal, title: 'Huy Chương Bạc', desc: 'Top 15% tiếp theo', color: 'from-gray-200 to-gray-400', text: 'text-gray-800', iconColor: 'text-gray-600' },
+    { icon: Medal, title: 'Huy Chương Đồng', desc: 'Top 25% tiếp theo', color: 'from-orange-200 to-amber-700', text: 'text-amber-900', iconColor: 'text-amber-800' },
+    { icon: Award, title: 'Giải Khuyến khích', desc: 'Top 10% tiếp theo', color: 'from-blue-100 to-blue-300', text: 'text-blue-900', iconColor: 'text-blue-600' },
 ];
 
 export const AwardsSection = () => {
@@ -33,7 +34,7 @@ export const AwardsSection = () => {
                             className={`bg-gradient-to-br ${award.color} rounded-3xl p-6 shadow-2xl relative overflow-hidden flex flex-col items-center justify-center text-center`}
                         >
                             <div className="w-20 h-20 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center mb-4 shadow-inner border border-white/50">
-                                <span className="text-4xl leading-none">{award.icon}</span>
+                                <award.icon className={`w-10 h-10 ${award.iconColor}`} strokeWidth={2} />
                             </div>
                             <h3 className={`text-xl font-bold mb-2 ${award.text}`}>{award.title}</h3>
                             <p className={`${award.text} font-medium bg-white/50 px-4 py-2 rounded-full w-full text-sm`}>
@@ -54,7 +55,7 @@ export const AwardsSection = () => {
                     <div className="absolute inset-0 bg-white/10 opacity-30 bg-stripes pattern-diagonal-lines-md"></div>
 
                     <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-xl shrink-0 absolute md:relative top-[-40px] md:top-0 border-4 border-fmc-orange">
-                        <span className="text-5xl">💎</span>
+                        <Crown className="w-12 h-12 text-fmc-orange" strokeWidth={2.5} />
                     </div>
 
                     <div className="relative z-10 pt-10 md:pt-0">
