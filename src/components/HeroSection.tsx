@@ -1,4 +1,4 @@
-import BannerImg from '../assets/Banner.jpg';
+import BannerImg from '../assets/Banner.png';
 
 export const HeroSection = () => {
     return (
