@@ -19,6 +19,12 @@ export const AboutSection = () => {
                             <span className="h-1 w-12 bg-fmc-orange rounded-full"></span>
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Về FMC 2026</h2>
                         </div>
+
+                        {/* New General Introduction */}
+                        <p className="text-gray-600 leading-relaxed mb-8">
+                            Kỳ thi Toán học Quốc tế Factorial (FMC) mang đến một sân chơi trí tuệ đỉnh cao, nơi học sinh không chỉ được cọ xát với những bài toán chuẩn quốc tế mà còn có cơ hội giao lưu học hỏi với bạn bè xuất sắc khắp mọi miền đất nước và quốc tế. Chúng tôi hướng tới việc xây dựng một môi trường nuôi dưỡng sự sáng tạo, tư duy logic và khả năng giải quyết vấn đề.
+                        </p>
+
                         <h3 className="text-2xl font-semibold text-fmc-lime mb-6">Mục Tiêu & Tầm Nhìn</h3>
 
                         <blockquote className="border-l-4 border-fmc-orange pl-6 my-8 text-gray-700 leading-relaxed text-lg italic bg-orange-50/50 p-6 rounded-r-2xl">
@@ -33,7 +39,7 @@ export const AboutSection = () => {
                         </p>
                     </motion.div>
 
-                    {/* Visual Concept */}
+                    {/* YouTube Video Concept */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -41,38 +47,15 @@ export const AboutSection = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="lg:w-1/2 relative flex justify-center w-full"
                     >
-                        <div className="relative w-full aspect-square max-w-md rounded-3xl overflow-hidden shadow-2xl group flex items-center justify-center bg-gradient-to-br from-fmc-lime/20 to-fmc-orange/20 border border-white/40 glass">
-                            <div className="absolute inset-0 bg-white/40 backdrop-blur-3xl"></div>
-
-                            <div className="relative z-10 text-center">
-                                <motion.div
-                                    animate={{
-                                        scale: [1, 1.05, 1],
-                                        rotate: [0, 5, -5, 0]
-                                    }}
-                                    transition={{
-                                        duration: 4,
-                                        repeat: Infinity,
-                                        ease: "easeInOut"
-                                    }}
-                                    className="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-fmc-lime to-fmc-orange drop-shadow-md pb-4"
-                                >
-                                    n!
-                                </motion.div>
-                                <div className="text-2xl font-bold tracking-widest text-gray-800 uppercase mt-2">Factorial</div>
-                            </div>
-
-                            {/* Decorative floating elements */}
-                            <motion.div
-                                animate={{ y: [-10, 10, -10] }}
-                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute top-10 right-10 w-16 h-16 bg-fmc-orange/20 rounded-full blur-xl"
-                            ></motion.div>
-                            <motion.div
-                                animate={{ y: [10, -10, 10] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                                className="absolute bottom-10 left-10 w-24 h-24 bg-fmc-lime/20 rounded-full blur-xl"
-                            ></motion.div>
+                        <div className="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl group flex items-center justify-center border-4 border-white glass">
+                            <iframe
+                                className="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/O-hK4p3dvPE"
+                                title="FMC Introduction Video"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
                         </div>
 
                         {/* Orange accent block */}

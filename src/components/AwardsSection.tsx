@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 
 const awards = [
-    { icon: '🥇', title: 'Huy Chương Vàng', desc: 'Top 10% học sinh xuất sắc nhất', color: 'from-amber-200 to-yellow-500', text: 'text-amber-800' },
+    { icon: '🥇', title: 'Huy Chương Vàng', desc: 'Top 10% học sinh xuất sắc', color: 'from-amber-200 to-yellow-500', text: 'text-amber-800' },
     { icon: '🥈', title: 'Huy Chương Bạc', desc: 'Top 15% tiếp theo', color: 'from-gray-200 to-gray-400', text: 'text-gray-800' },
     { icon: '🥉', title: 'Huy Chương Đồng', desc: 'Top 25% tiếp theo', color: 'from-orange-200 to-amber-700', text: 'text-amber-900' },
     { icon: '🏆', title: 'Giải Khuyến khích', desc: 'Top 10% tiếp theo', color: 'from-blue-100 to-blue-300', text: 'text-blue-900' },
@@ -58,7 +58,7 @@ export const AwardsSection = () => {
                     </div>
 
                     <div className="relative z-10 pt-10 md:pt-0">
-                        <h3 className="text-2xl font-black text-white mb-2 tracking-wide uppercase">Giải Đặc Biệt</h3>
+                        <h3 className="text-2xl font-bold text-white mb-2 tracking-wide uppercase">Giải Đặc Biệt</h3>
                         <p className="text-orange-50 text-lg font-medium">
                             11 giải thưởng trị giá <strong className="text-2xl text-white font-black bg-orange-600/50 px-2 py-1 rounded">400$ / giải</strong>
                         </p>
