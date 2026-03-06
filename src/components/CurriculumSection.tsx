@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion';
-import { Calculator, Divide, Edit3, Grid } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calculator, Divide, Edit3, Grid, X, Download } from 'lucide-react';
 import { MathBackground } from './MathBackground';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 const topics = [
     { id: 1, title: 'Đại số', icon: Calculator, desc: 'Tư duy logic và biến đổi đại số chuyên sâu.', color: 'text-blue-500', bg: 'bg-blue-50' },
@@ -10,6 +12,34 @@ const topics = [
 ];
 
 export const CurriculumSection = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isVerified, setIsVerified] = useState(false);
+
+    // 🔴 PLACEHOLDER: BẠN SẼ THAY ĐỐI ĐƯỜNG LINK GOOGLE DRIVE CỦA BẠN VÀO ĐÂY
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const DRIVE_LINK = "https://drive.google.com/drive/folders/1oZfMzPEyaKxy8ggLKcL5kIwMYP4mlJ3I?usp=drive_link";
+
+    // 🔴 PLACEHOLDER: BẠN SẼ THAY ĐỔI SITE KEY CỦA CLOUDFLARE TURNSTILE VÀO ĐÂY
+    // Chuỗi dưới đây là Site Key test mặc định của Cloudflare (luôn pass).
+    const TURNSTILE_SITE_KEY = "0x4AAAAAACnTrnNf9bRNcUTe";
+
+    const handleDownloadClick = () => {
+        if (isVerified) {
+            window.open(DRIVE_LINK, '_blank');
+        } else {
+            setIsModalOpen(true);
+        }
+    };
+
+    const handleVerifySuccess = () => {
+        setIsVerified(true);
+        // Tự động mở tab Google Drive sau khi xác thực thành công (để UX mượt mà)
+        setTimeout(() => {
+            window.open(DRIVE_LINK, '_blank');
+            setIsModalOpen(false);
+        }, 1200);
+    };
+
     return (
         <section className="py-20 relative overflow-hidden bg-fmc-sec-4">
             <MathBackground pattern="geometry" opacity={0.05} />
@@ -23,14 +53,15 @@ export const CurriculumSection = () => {
                             <p className="text-gray-600 mb-8">
                                 Nội dung thi bao gồm 4 mảng kiến thức trọng tâm, được thiết kế theo chuẩn toán học quốc tế nhằm mang tới những thử thách phân loại đa dạng nhất.
                             </p>
-                            <motion.a
+                            <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                href="#register"
-                                className="inline-block bg-white text-fmc-dark font-bold px-6 py-3 rounded-full border-2 border-fmc-lime hover:bg-fmc-lime hover:text-white transition-colors shadow-sm"
+                                onClick={handleDownloadClick}
+                                className="inline-flex items-center gap-2 bg-white text-fmc-dark font-bold px-6 py-3 rounded-full border-2 border-fmc-lime hover:bg-fmc-lime hover:text-white transition-colors shadow-sm cursor-pointer"
                             >
+                                <Download size={20} />
                                 Tải Đề Cương Chi Tiết
-                            </motion.a>
+                            </motion.button>
                         </div>
                     </div>
 
@@ -55,6 +86,61 @@ export const CurriculumSection = () => {
 
                 </div>
             </div>
+
+            {/* Turnstile Security Modal */}
+            <AnimatePresence>
+                {isModalOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-fmc-dark/60 backdrop-blur-sm"
+                    >
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                            className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl relative text-center"
+                        >
+                            <button
+                                onClick={() => setIsModalOpen(false)}
+                                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 transition-colors p-1"
+                            >
+                                <X size={24} />
+                            </button>
+
+                            <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <Download className="text-blue-500" size={32} />
+                            </div>
+
+                            <h3 className="text-2xl font-bold text-fmc-dark mb-2">Xác minh bảo mật</h3>
+                            <p className="text-gray-600 text-sm mb-6">
+                                Hệ thống cần xác nhận bạn là người thật để chống thư rác trước khi mở Google Drive.
+                            </p>
+
+                            <div className="flex justify-center items-center min-h-[65px] bg-gray-50 rounded-xl p-2 border border-gray-100">
+                                {!isVerified ? (
+                                    <Turnstile
+                                        siteKey={TURNSTILE_SITE_KEY}
+                                        onSuccess={handleVerifySuccess}
+                                        onError={() => alert('Xác thực thất bại, vui lòng tải lại trang và thử lại!')}
+                                        options={{
+                                            theme: 'light',
+                                        }}
+                                    />
+                                ) : (
+                                    <div className="text-green-600 font-bold flex items-center justify-center gap-2 py-4">
+                                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        <span>Xác thực thành công! Đang mở...</span>
+                                    </div>
+                                )}
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 };
