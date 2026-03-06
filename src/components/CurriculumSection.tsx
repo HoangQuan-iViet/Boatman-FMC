@@ -21,7 +21,7 @@ export const CurriculumSection = () => {
 
     // 🔴 PLACEHOLDER: BẠN SẼ THAY ĐỔI SITE KEY CỦA CLOUDFLARE TURNSTILE VÀO ĐÂY
     // Chuỗi dưới đây là Site Key test mặc định của Cloudflare (luôn pass).
-    const TURNSTILE_SITE_KEY = "0x4AAAAAACnTrnNf9bRNcUTe";
+    const TURNSTILE_SITE_KEY = "0x4AAAAAACnUPwo_dAE0vR1h";
 
     const handleDownloadClick = () => {
         if (isVerified) {
@@ -33,11 +33,10 @@ export const CurriculumSection = () => {
 
     const handleVerifySuccess = () => {
         setIsVerified(true);
-        // Tự động mở tab Google Drive sau khi xác thực thành công (để UX mượt mà)
-        setTimeout(() => {
-            window.open(DRIVE_LINK, '_blank');
-            setIsModalOpen(false);
-        }, 1200);
+        // Trình duyệt web (Chrome, Safari,...) sẽ tự động chặn các Popup (cửa sổ mới) 
+        // nếu lệnh bật popup không xuất phát trực tiếp từ 1 cú click của người dùng.
+        // Cú callback của Cloudflare là Async nên window.open tự động bị chặn.
+        // Cách tối ưu là hiển thị nút "Mở Google Drive" để người dùng tự click.
     };
 
     return (
@@ -60,7 +59,7 @@ export const CurriculumSection = () => {
                                 className="inline-flex items-center gap-2 bg-white text-fmc-dark font-bold px-6 py-3 rounded-full border-2 border-fmc-lime hover:bg-fmc-lime hover:text-white transition-colors shadow-sm cursor-pointer"
                             >
                                 <Download size={20} />
-                                Tải Đề Cương Chi Tiết
+                                {isVerified ? 'Mở Lại Google Drive' : 'Tải Đề Cương Chi Tiết'}
                             </motion.button>
                         </div>
                     </div>
@@ -129,11 +128,22 @@ export const CurriculumSection = () => {
                                         }}
                                     />
                                 ) : (
-                                    <div className="text-green-600 font-bold flex items-center justify-center gap-2 py-4">
-                                        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                        </svg>
-                                        <span>Xác thực thành công! Đang mở...</span>
+                                    <div className="flex flex-col items-center justify-center gap-4 py-4 w-full">
+                                        <div className="text-green-600 font-bold flex items-center justify-center gap-2">
+                                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                            </svg>
+                                            <span>Xác thực thành công!</span>
+                                        </div>
+                                        <a
+                                            href={DRIVE_LINK}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => setIsModalOpen(false)}
+                                            className="w-full text-center px-6 py-3 bg-fmc-lime text-white rounded-xl font-bold hover:bg-lime-600 transition-colors shadow-md"
+                                        >
+                                            Mở Google Drive
+                                        </a>
                                     </div>
                                 )}
                             </div>
