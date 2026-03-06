@@ -11,7 +11,7 @@ export default {
         'fmc-orange': '#f26522', // Cam (vibrant orange for CTA)
       },
       fontFamily: {
-        sans: ['"Outfit"', 'sans-serif'], // Modern premium font
+        sans: ['"Open Sans"', 'sans-serif'], // Open Sans Google Font
       },
     },
   },
