@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 
 // Mapped Latin letters (A-E) to Greek letters (Alpha-Epsilon) descending based on grades.
 const levels = [
-    { id: 'epsilon', capital: 'E', name: 'Epsilon', symbol: 'ε', grades: 'Lớp 1 - 2', color: 'from-blue-400 to-blue-600', text: 'text-blue-500', bg: 'bg-blue-50', hoverBorder: 'hover:border-blue-400', delay: 0 },
-    { id: 'delta', capital: 'Δ', name: 'Delta', symbol: 'δ', grades: 'Lớp 3 - 4', color: 'from-green-400 to-green-600', text: 'text-green-500', bg: 'bg-green-50', hoverBorder: 'hover:border-green-400', delay: 0.1 },
-    { id: 'gamma', capital: 'Γ', name: 'Gamma', symbol: 'γ', grades: 'Lớp 5 - 6', color: 'from-yellow-400 to-orange-500', text: 'text-orange-500', bg: 'bg-orange-50', hoverBorder: 'hover:border-orange-400', delay: 0.2 },
-    { id: 'beta', capital: 'B', name: 'Beta', symbol: 'β', grades: 'Lớp 7 - 8', color: 'from-red-400 to-rose-600', text: 'text-rose-500', bg: 'bg-rose-50', hoverBorder: 'hover:border-rose-400', delay: 0.3 },
-    { id: 'alpha', capital: 'A', name: 'Alpha', symbol: 'α', grades: 'Lớp 9 - 11', color: 'from-purple-500 to-indigo-600', text: 'text-purple-500', bg: 'bg-indigo-50', hoverBorder: 'hover:border-purple-400', delay: 0.4 },
+    { id: 'epsilon', capital: 'E', name: 'Epsilon', symbol: 'ε', grades: 'Lớp 1 - 2', color: 'from-blue-400 to-blue-600', text: 'text-blue-500', bg: 'bg-blue-50', hoverBorder: 'hover:border-blue-400', hoverLine: 'group-hover:bg-blue-500', delay: 0 },
+    { id: 'delta', capital: 'Δ', name: 'Delta', symbol: 'δ', grades: 'Lớp 3 - 4', color: 'from-green-400 to-green-600', text: 'text-green-500', bg: 'bg-green-50', hoverBorder: 'hover:border-green-400', hoverLine: 'group-hover:bg-green-500', delay: 0.1 },
+    { id: 'gamma', capital: 'Γ', name: 'Gamma', symbol: 'γ', grades: 'Lớp 5 - 6', color: 'from-yellow-400 to-orange-500', text: 'text-orange-500', bg: 'bg-orange-50', hoverBorder: 'hover:border-orange-400', hoverLine: 'group-hover:bg-orange-500', delay: 0.2 },
+    { id: 'beta', capital: 'B', name: 'Beta', symbol: 'β', grades: 'Lớp 7 - 8', color: 'from-red-400 to-rose-600', text: 'text-rose-500', bg: 'bg-rose-50', hoverBorder: 'hover:border-rose-400', hoverLine: 'group-hover:bg-rose-500', delay: 0.3 },
+    { id: 'alpha', capital: 'A', name: 'Alpha', symbol: 'α', grades: 'Lớp 9 - 11', color: 'from-purple-500 to-indigo-600', text: 'text-purple-500', bg: 'bg-indigo-50', hoverBorder: 'hover:border-purple-400', hoverLine: 'group-hover:bg-purple-500', delay: 0.4 },
 ];
 
 export const LevelsSection = () => {
@@ -43,7 +43,7 @@ export const LevelsSection = () => {
 
                             <h3 className="text-xl font-bold text-gray-800 uppercase tracking-widest mb-3 font-open-sans">{level.name}</h3>
 
-                            <div className="w-12 h-1 bg-gray-200 rounded-full mb-4 group-hover:bg-fmc-lime transition-colors"></div>
+                            <div className={`w-12 h-1 bg-gray-200 rounded-full mb-4 ${level.hoverLine} transition-colors`}></div>
 
                             <p className="text-gray-600 font-bold bg-fmc-sec-1 px-4 py-2 rounded-xl w-full border border-fmc-sec-3 group-hover:bg-fmc-lime/10 transition-colors font-open-sans">
                                 {level.grades}
