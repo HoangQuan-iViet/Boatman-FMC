@@ -39,7 +39,7 @@ export const Footer = () => {
                             </li>
                             <li className="flex items-center gap-3 text-sm hover:text-white transition-colors">
                                 <Mail className="text-fmc-orange shrink-0" size={18} />
-                                <span>lienhe@boatman.vn (Dự kiến)</span>
+                                <span>info.fmcvietnam@gmail.com</span>
                             </li>
                         </ul>
                     </div>
@@ -59,10 +59,6 @@ export const Footer = () => {
 
                 <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
                     <p>© {new Date().getFullYear()} Công ty Cổ phần Boatman. All rights reserved.</p>
-                    <div className="flex gap-4 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-white transition-colors">Bảo mật</a>
-                        <a href="#" className="hover:text-white transition-colors">Điều khoản</a>
-                    </div>
                 </div>
             </div>
         </footer>

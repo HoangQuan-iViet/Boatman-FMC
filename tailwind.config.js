@@ -21,6 +21,7 @@ export default {
       },
       fontFamily: {
         sans: ['"Open Sans"', 'sans-serif'], // Open Sans Google Font
+        'open-sans': ['"Open Sans"', 'sans-serif'],
       },
     },
   },
