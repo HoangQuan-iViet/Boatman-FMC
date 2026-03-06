@@ -1,19 +1,17 @@
 import { motion } from 'framer-motion';
-import { Medal, Award, Crown } from 'lucide-react';
 import { MathBackground } from './MathBackground';
 
 const awards = [
-    { icon: Medal, title: 'Huy Chương Vàng', desc: 'Top 10% học sinh xuất sắc', color: 'from-amber-200 to-yellow-500', text: 'text-amber-800', iconColor: 'text-yellow-600' },
-    { icon: Medal, title: 'Huy Chương Bạc', desc: 'Top 15% tiếp theo', color: 'from-gray-200 to-gray-400', text: 'text-gray-800', iconColor: 'text-gray-600' },
-    { icon: Medal, title: 'Huy Chương Đồng', desc: 'Top 25% tiếp theo', color: 'from-orange-200 to-amber-700', text: 'text-amber-900', iconColor: 'text-amber-800' },
-    { icon: Award, title: 'Giải Khuyến khích', desc: 'Top 10% tiếp theo', color: 'from-blue-100 to-blue-300', text: 'text-blue-900', iconColor: 'text-blue-600' },
+    { imageSrc: '/medals/gold.png', title: 'Huy Chương Vàng', desc: 'Top 10% học sinh xuất sắc', color: 'from-amber-200 to-yellow-500', text: 'text-amber-800' },
+    { imageSrc: '/medals/silver.png', title: 'Huy Chương Bạc', desc: 'Top 15% tiếp theo', color: 'from-gray-200 to-gray-400', text: 'text-gray-800' },
+    { imageSrc: '/medals/bronze.png', title: 'Huy Chương Đồng', desc: 'Top 25% tiếp theo', color: 'from-orange-200 to-amber-700', text: 'text-amber-900' },
+    { imageSrc: '/medals/consolation.png', title: 'Giải Khuyến khích', desc: 'Top 10% tiếp theo', color: 'from-blue-100 to-blue-300', text: 'text-blue-900' },
 ];
 
 export const AwardsSection = () => {
     return (
         <section className="py-20 bg-fmc-dark relative overflow-hidden">
             <MathBackground pattern="geometry" opacity={0.03} />
-            {/* Dark background requires a lower opacity pattern mostly white/lime. The MathBackground takes text-fmc-lime natively. */}
 
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
                 <div className="text-center mb-16">
@@ -34,8 +32,8 @@ export const AwardsSection = () => {
                             whileHover={{ y: -5 }}
                             className={`bg-gradient-to-br ${award.color} rounded-3xl p-6 shadow-2xl relative overflow-hidden flex flex-col items-center justify-center text-center`}
                         >
-                            <div className="w-20 h-20 rounded-full bg-white/30 backdrop-blur-md flex items-center justify-center mb-4 shadow-inner border border-white/50">
-                                <award.icon className={`w-10 h-10 ${award.iconColor}`} strokeWidth={2} />
+                            <div className="w-24 h-24 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center mb-4 shadow-inner border border-white/60 p-4">
+                                <img src={award.imageSrc} alt={award.title} className="w-full h-full object-contain drop-shadow-md" />
                             </div>
                             <h3 className={`text-xl font-bold mb-2 ${award.text}`}>{award.title}</h3>
                             <p className={`${award.text} font-medium bg-white/50 px-4 py-2 rounded-full w-full text-sm`}>
@@ -55,8 +53,8 @@ export const AwardsSection = () => {
                 >
                     <div className="absolute inset-0 bg-white/10 opacity-30 bg-stripes pattern-diagonal-lines-md"></div>
 
-                    <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-xl shrink-0 absolute md:relative top-[-40px] md:top-0 border-4 border-fmc-orange">
-                        <Crown className="w-12 h-12 text-fmc-orange" strokeWidth={2.5} />
+                    <div className="w-32 h-32 rounded-3xl bg-white flex items-center justify-center shadow-xl shrink-0 absolute md:relative top-[-50px] md:top-0 border-4 border-fmc-orange p-4 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                        <img src="/medals/certificate.png" alt="Chứng nhận Thủ khoa" className="w-full h-full object-contain drop-shadow-lg" />
                     </div>
 
                     <div className="relative z-10 pt-10 md:pt-0">
