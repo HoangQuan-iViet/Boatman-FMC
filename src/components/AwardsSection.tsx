@@ -1,6 +1,6 @@
-
 import { motion } from 'framer-motion';
 import { Medal, Award, Crown } from 'lucide-react';
+import { MathBackground } from './MathBackground';
 
 const awards = [
     { icon: Medal, title: 'Huy Chương Vàng', desc: 'Top 10% học sinh xuất sắc', color: 'from-amber-200 to-yellow-500', text: 'text-amber-800', iconColor: 'text-yellow-600' },
@@ -11,8 +11,9 @@ const awards = [
 
 export const AwardsSection = () => {
     return (
-        <section className="py-20 bg-gray-900 relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-fmc-orange/10 z-0"></div>
+        <section className="py-20 bg-fmc-dark relative overflow-hidden">
+            <MathBackground pattern="geometry" opacity={0.03} />
+            {/* Dark background requires a lower opacity pattern mostly white/lime. The MathBackground takes text-fmc-lime natively. */}
 
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
                 <div className="text-center mb-16">

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import { MathBackground } from './MathBackground';
 
 const faqs = [
     {
@@ -25,10 +26,11 @@ export const FaqSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-20 bg-white">
-            <div className="container mx-auto px-4 md:px-8 max-w-4xl">
+        <section className="py-20 relative overflow-hidden bg-fmc-sec-6">
+            <MathBackground pattern="symbols" opacity={0.05} />
+            <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Câu Hỏi Thường Gặp (FAQ)</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-4">Câu Hỏi Thường Gặp (FAQ)</h2>
                     <p className="text-gray-600">Giải đáp nhanh những thắc mắc của Phụ huynh và Học sinh về Kỳ thi FMC 2026</p>
                 </div>
 
@@ -40,7 +42,7 @@ export const FaqSection = () => {
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                className="w-full text-left px-6 py-5 bg-gray-50 flex items-center justify-between font-semibold text-gray-800 hover:bg-lime-50/50 transition-colors"
+                                className="w-full text-left px-6 py-5 bg-white/90 backdrop-blur-sm flex items-center justify-between font-semibold text-gray-800 hover:bg-white transition-colors"
                             >
                                 <span>{faq.q}</span>
                                 <ChevronDown
@@ -57,7 +59,7 @@ export const FaqSection = () => {
                                         exit={{ height: 0, opacity: 0 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="px-6 py-5 bg-white text-gray-600 leading-relaxed border-t border-gray-50">
+                                        <div className="px-6 py-5 bg-white/90 backdrop-blur-sm text-gray-600 leading-relaxed border-t border-gray-100">
                                             {faq.a}
                                         </div>
                                     </motion.div>

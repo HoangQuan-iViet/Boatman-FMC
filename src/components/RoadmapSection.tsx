@@ -1,5 +1,6 @@
 
 import { motion } from 'framer-motion';
+import { MathBackground } from './MathBackground';
 
 const milestones = [
     {
@@ -30,11 +31,12 @@ const milestones = [
 
 export const RoadmapSection = () => {
     return (
-        <section className="py-20 bg-white">
-            <div className="container mx-auto px-4 md:px-8 max-w-4xl">
+        <section className="py-20 relative overflow-hidden bg-fmc-sec-3">
+            <MathBackground pattern="grid" opacity={0.07} />
+            <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
                 <div className="text-center mb-16">
                     <span className="text-fmc-lime font-bold tracking-wider uppercase text-sm mb-2 block">Hành trình tới Jakarta</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lộ Trình Kỳ Thi FMC 2026</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-4">Lộ Trình Kỳ Thi FMC 2026</h2>
                 </div>
 
                 <div className="relative">
@@ -56,9 +58,9 @@ export const RoadmapSection = () => {
 
                                 {/* Content Box */}
                                 <div className={`pl-12 md:pl-0 w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12 md:text-right'}`}>
-                                    <div className={`bg-gray-50 border-l-4 ${item.color} p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow`}>
+                                    <div className={`bg-white/90 backdrop-blur-sm border-l-4 ${item.color} p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow`}>
                                         <span className="text-sm font-bold text-gray-500 bg-gray-200/50 px-3 py-1 rounded-full">{item.date}</span>
-                                        <h3 className="text-xl font-bold text-gray-900 mt-3 mb-1">{item.title}</h3>
+                                        <h3 className="text-xl font-bold text-fmc-dark mt-3 mb-1">{item.title}</h3>
                                         <p className="text-gray-600 font-medium flex items-center gap-2 mt-2 justify-start md:justify-start">
                                             <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />

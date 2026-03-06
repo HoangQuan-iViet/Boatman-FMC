@@ -12,7 +12,7 @@ import { Footer } from './components/Footer'
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen font-sans bg-gray-50 text-gray-800 scroll-smooth">
+    <div className="min-h-screen font-sans text-gray-800 scroll-smooth">
       <HeroSection />
       <AboutSection />
       <LevelsSection />

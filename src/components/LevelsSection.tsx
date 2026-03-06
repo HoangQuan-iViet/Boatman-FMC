@@ -1,5 +1,5 @@
-
 import { motion } from 'framer-motion';
+import { MathBackground } from './MathBackground';
 
 const levels = [
     { id: 'epsilon', name: 'Epsilon', symbol: 'ε', grades: 'Lớp 1 – Lớp 2', color: 'from-blue-400 to-blue-600', delay: 0 },
@@ -11,14 +11,15 @@ const levels = [
 
 export const LevelsSection = () => {
     return (
-        <section className="py-20 bg-gray-50 relative overflow-hidden">
+        <section className="py-20 relative overflow-hidden bg-fmc-sec-2">
+            <MathBackground pattern="numbers" opacity={0.05} />
             {/* Decorative Background */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-fmc-lime/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
-            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
+            <div className="container mx-auto px-4 md:px-8 max-w-5xl relative z-10">
                 <div className="text-center mb-16">
                     <span className="text-fmc-orange font-bold tracking-wider uppercase text-sm mb-2 block">Thử thách theo từng cấp độ</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Đối Tượng & Các Cấp Độ Thi Đấu</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-4">Đối Tượng & Các Cấp Độ Thi Đấu</h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         Học sinh từ lớp 1 đến lớp 11 trên toàn quốc đam mê Toán học có thể tham gia tranh tài ở các hạng mức độ thử thách khác nhau.
                     </p>

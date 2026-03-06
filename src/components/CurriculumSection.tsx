@@ -1,6 +1,6 @@
-
 import { motion } from 'framer-motion';
 import { Calculator, Divide, Edit3, Grid } from 'lucide-react';
+import { MathBackground } from './MathBackground';
 
 const topics = [
     { id: 1, title: 'Đại số', icon: Calculator, desc: 'Tư duy logic và biến đổi đại số chuyên sâu.', color: 'text-blue-500', bg: 'bg-blue-50' },
@@ -11,24 +11,27 @@ const topics = [
 
 export const CurriculumSection = () => {
     return (
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
-            <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+        <section className="py-20 relative overflow-hidden bg-fmc-sec-4">
+            <MathBackground pattern="geometry" opacity={0.05} />
+            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
                 <div className="flex flex-col md:flex-row gap-12 items-center">
 
                     <div className="w-full md:w-1/3">
-                        <span className="text-fmc-lime font-bold tracking-wider uppercase text-sm mb-2 block">Cấu trúc đề thi</span>
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Chương Trình Học & Đề Cương</h2>
-                        <p className="text-gray-600 mb-8">
-                            Nội dung thi bao gồm 4 mảng kiến thức trọng tâm, được thiết kế theo chuẩn toán học quốc tế nhằm mang tới những thử thách phân loại đa dạng nhất.
-                        </p>
-                        <motion.a
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            href="#register"
-                            className="inline-block bg-white text-gray-900 font-bold px-6 py-3 rounded-full border-2 border-fmc-lime hover:bg-fmc-lime hover:text-white transition-colors shadow-sm"
-                        >
-                            Tải Đề Cương Chi Tiết
-                        </motion.a>
+                        <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-sm border border-white">
+                            <span className="text-fmc-lime font-bold tracking-wider uppercase text-sm mb-2 block">Cấu trúc đề thi</span>
+                            <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-6">Chương Trình Học & Đề Cương</h2>
+                            <p className="text-gray-600 mb-8">
+                                Nội dung thi bao gồm 4 mảng kiến thức trọng tâm, được thiết kế theo chuẩn toán học quốc tế nhằm mang tới những thử thách phân loại đa dạng nhất.
+                            </p>
+                            <motion.a
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                href="#register"
+                                className="inline-block bg-white text-fmc-dark font-bold px-6 py-3 rounded-full border-2 border-fmc-lime hover:bg-fmc-lime hover:text-white transition-colors shadow-sm"
+                            >
+                                Tải Đề Cương Chi Tiết
+                            </motion.a>
+                        </div>
                     </div>
 
                     <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">

@@ -1,16 +1,17 @@
-
+import { MathBackground } from './MathBackground';
 import { CreditCard, Building2, User, Hash, Info, QrCode } from 'lucide-react';
 
 export const PaymentSection = () => {
     return (
-        <section id="register" className="py-20 bg-gray-50 relative overflow-hidden">
+        <section id="register" className="py-20 relative overflow-hidden bg-fmc-sec-7">
+            <MathBackground pattern="numbers" opacity={0.06} />
             {/* Decorative large numbers/shapes for background */}
             <div className="absolute top-10 left-10 text-[20vw] font-black text-gray-100 opacity-50 select-none pointer-events-none -translate-y-1/4">2026</div>
 
             <div className="container mx-auto px-4 md:px-8 max-w-5xl relative z-10">
                 <div className="text-center mb-16">
                     <span className="text-fmc-orange font-bold tracking-wider uppercase text-sm mb-2 block">Thanh toán & Đăng ký</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Hướng Dẫn Thanh Toán Lệ Phí Thi</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-4">Hướng Dẫn Thanh Toán Lệ Phí Thi</h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         Quý phụ huynh/Học sinh vui lòng hoàn tất thủ tục chuyển khoản để xác nhận đăng ký chính thức tham dự cuộc thi.
                     </p>

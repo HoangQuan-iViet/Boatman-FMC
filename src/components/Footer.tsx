@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 
 export const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-gray-300 py-12 border-t-4 border-fmc-orange relative overflow-hidden">
+        <footer className="bg-fmc-dark text-gray-300 py-12 border-t-4 border-fmc-orange relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-fmc-lime/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
@@ -49,7 +49,7 @@ export const Footer = () => {
                         <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider">Hỗ Trợ Nhanh</h3>
                         <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700">
                             <p className="text-sm mb-4">Bạn cần hỗ trợ thêm về thể lệ và quy trình đăng ký thi? Đừng ngần ngại liên hệ.</p>
-                            <a href="#register" className="block w-full text-center bg-transparent border border-fmc-lime text-fmc-lime font-bold py-2 rounded-lg hover:bg-fmc-lime hover:text-gray-900 transition-colors">
+                            <a href="#register" className="block w-full text-center bg-transparent border border-fmc-lime text-fmc-lime font-bold py-2 rounded-lg hover:bg-fmc-lime hover:text-fmc-dark transition-colors">
                                 Trang Thanh Toán Lệ Phí
                             </a>
                         </div>

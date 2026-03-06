@@ -1,6 +1,6 @@
-
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Flag, Award, Plane } from 'lucide-react';
+import { Calendar, MapPin, Flag, Award, Plane, Edit3, Users, Map } from 'lucide-react';
+import { MathBackground } from './MathBackground';
 
 const schedule = [
     { day: 'Chủ nhật (05/07)', title: 'Đến nơi, Đăng ký & Bữa tối chào mừng', icon: Plane },
@@ -10,18 +10,17 @@ const schedule = [
     { day: 'Thứ 5 (09/07)', title: 'Công bố kết quả, Lễ bế mạc & Khởi hành', icon: Award },
 ];
 
-import { Edit3, Users, Map } from 'lucide-react';
-
 export const InternationalCampSection = () => {
     return (
-        <section className="py-20 bg-white">
-            <div className="container mx-auto px-4 md:px-8 max-w-5xl">
+        <section className="py-20 relative overflow-hidden bg-fmc-sec-5">
+            <MathBackground pattern="equations" opacity={0.06} />
+            <div className="container mx-auto px-4 md:px-8 max-w-5xl relative z-10">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center justify-center space-x-2 bg-orange-50 text-fmc-orange px-4 py-2 rounded-full mb-6 font-semibold shadow-sm">
                         <MapPin size={18} />
                         <span>Jakarta, Indonesia</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Chương Trình Vòng Quốc Tế FMC 2026</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-4">Chương Trình Vòng Quốc Tế FMC 2026</h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">
                         5 ngày 4 đêm trải nghiệm văn hóa, giao lưu quốc tế và thử thách bản thân tại thủ đô Jakarta năng động.
                     </p>
@@ -47,7 +46,7 @@ export const InternationalCampSection = () => {
                                 </div>
 
                                 {/* Content Box */}
-                                <div className={`bg-gray-50 border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow md:w-[45%] ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'}`}>
+                                <div className={`bg-white/90 backdrop-blur-sm border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow md:w-[45%] ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'}`}>
                                     <h4 className="text-fmc-orange font-bold text-xl mb-2 flex items-center gap-2">
                                         <Calendar size={18} className="text-fmc-orange/70" />
                                         {item.day}
@@ -64,7 +63,7 @@ export const InternationalCampSection = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="mt-16 bg-gradient-to-r from-fmc-lime/20 to-fmc-lime/10 rounded-3xl p-8 border border-fmc-lime/30 flex justify-center items-center text-center shadow-sm"
+                    className="mt-16 bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-fmc-lime/30 flex justify-center items-center text-center shadow-lg hover:shadow-xl transition-shadow"
                 >
                     <div className="max-w-2xl">
                         <Flag className="w-12 h-12 text-fmc-lime mx-auto mb-4" />

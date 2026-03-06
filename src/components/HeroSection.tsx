@@ -3,19 +3,22 @@ import BannerImg from '../assets/Banner.png';
 
 export const HeroSection = () => {
     return (
-        <section className="w-full bg-gray-900 flex justify-center items-center">
+        <section className="w-full bg-fmc-dark flex justify-center items-center relative">
             <picture className="w-full h-auto block">
                 <source srcSet={BannerWebP} type="image/webp" />
                 <source srcSet={BannerImg} type="image/png" />
-                <img 
-                    src={BannerImg} 
-                    alt="Banner FMC 2026" 
-                    className="w-full h-auto object-contain block" 
-                    fetchpriority="high"
+                <img
+                    src={BannerImg}
+                    alt="Banner FMC 2026"
+                    className="w-full h-auto object-contain block"
+                    fetchPriority="high"
                     decoding="sync"
                     loading="eager"
                 />
             </picture>
+
+            {/* Fade transition into the About Section (bg-fmc-sec-1) */}
+            <div className="absolute bottom-0 left-0 w-full h-32 md:h-64 bg-gradient-to-t from-fmc-sec-1 to-transparent pointer-events-none"></div>
         </section>
     );
 };
