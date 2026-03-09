@@ -11,15 +11,22 @@ const levels = [
 
 export const LevelsSection = () => {
     return (
-        <section className="py-20 relative overflow-hidden bg-fmc-sec-2">
-            <div className="container mx-auto px-4 md:px-8 max-w-5xl relative z-10">
-                <div className="text-center mb-16">
-                    <span className="text-fmc-orange font-bold tracking-wider uppercase text-sm mb-2 block">Thử thách theo từng cấp độ</span>
-                    <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-4">Đối Tượng & Các Cấp Độ Thi Đấu</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+        <section className="py-20 relative overflow-hidden bg-[#bede12]">
+            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
+                {/* Header Frame */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="bg-white/95 backdrop-blur-md p-8 md:p-12 text-center rounded-[40px] shadow-2xl border-4 border-white mb-16 w-full max-w-5xl mx-auto relative overflow-hidden"
+                >
+                    <span className="text-fmc-orange font-bold tracking-wider uppercase text-base mb-3 block drop-shadow-sm">Thử thách theo từng cấp độ</span>
+                    <h2 className="text-3xl md:text-5xl font-black text-fmc-dark mb-6 drop-shadow-sm uppercase tracking-tight">Đối Tượng & Các Cấp Độ Thi Đấu</h2>
+                    <p className="text-gray-700 text-lg font-medium max-w-3xl mx-auto leading-relaxed">
                         Học sinh từ lớp 1 đến lớp 11 trên toàn quốc đam mê Toán học có thể tham gia tranh tài ở các hạng mức độ nhận thức khác nhau.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                     {levels.map((level) => (
