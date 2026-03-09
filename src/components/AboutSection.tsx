@@ -22,7 +22,7 @@ export const AboutSection = () => {
                         <div className="flex flex-col justify-center">
                             <div className="flex items-center gap-4 mb-6">
                                 <span className="h-1 w-12 bg-fmc-orange rounded-full"></span>
-                                <h2 className="text-3xl md:text-5xl font-black text-fmc-dark drop-shadow-sm uppercase tracking-tight">Về FMC 2026</h2>
+                                <h2 className="text-3xl md:text-5xl font-black text-fmc-lime drop-shadow-sm uppercase tracking-tight">Về FMC 2026</h2>
                             </div>
                             <p className="text-gray-700 leading-relaxed text-lg">
                                 Kỳ thi Toán học Quốc tế Factorial (FMC) mang đến một sân chơi trí tuệ đỉnh cao, nơi học sinh không chỉ được cọ xát với những bài toán chuẩn quốc tế mà còn có cơ hội giao lưu học hỏi với bạn bè xuất sắc khắp mọi miền đất nước và quốc tế. Chúng tôi hướng tới việc xây dựng một môi trường nuôi dưỡng sự sáng tạo, tư duy logic và khả năng giải quyết vấn đề.
