@@ -40,7 +40,7 @@ export const CurriculumSection = () => {
     };
 
     return (
-        <section className="py-20 relative overflow-hidden bg-fmc-sec-4">
+        <section className="py-20 relative overflow-hidden bg-[#d2ea16]">
             <MathBackground pattern="geometry" opacity={0.05} />
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
                 <div className="flex flex-col md:flex-row gap-12 items-center">

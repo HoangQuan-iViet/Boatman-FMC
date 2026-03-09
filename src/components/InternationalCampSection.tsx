@@ -12,19 +12,26 @@ const schedule = [
 
 export const InternationalCampSection = () => {
     return (
-        <section className="py-20 relative overflow-hidden bg-fmc-sec-5">
+        <section className="py-20 relative overflow-hidden bg-[#bede12]">
             <MathBackground pattern="equations" opacity={0.06} />
-            <div className="container mx-auto px-4 md:px-8 max-w-5xl relative z-10">
-                <div className="text-center mb-16">
+            <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+                {/* Header Frame (Matches LevelsSection/RoadmapSection) */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="bg-white/95 backdrop-blur-md p-8 md:p-12 text-center rounded-[40px] shadow-2xl border-4 border-white mb-16 w-full max-w-6xl mx-auto relative overflow-hidden"
+                >
                     <div className="inline-flex items-center justify-center space-x-2 bg-orange-50 text-fmc-orange px-4 py-2 rounded-full mb-6 font-semibold shadow-sm">
                         <MapPin size={18} />
                         <span>Jakarta, Indonesia</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-4">Chương Trình Vòng Quốc Tế FMC 2026</h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <h2 className="text-3xl md:text-5xl font-black text-fmc-dark mb-6 drop-shadow-sm uppercase tracking-tight">Chương Trình Vòng Quốc Tế FMC 2026</h2>
+                    <p className="text-gray-700 text-lg font-medium max-w-3xl mx-auto leading-relaxed">
                         5 ngày 4 đêm trải nghiệm văn hóa, giao lưu quốc tế và thử thách bản thân tại thủ đô Jakarta năng động.
                     </p>
-                </div>
+                </motion.div>
 
                 <div className="relative border-l-2 border-fmc-lime ml-4 md:ml-0 md:pl-0">
                     <div className="space-y-8 pl-8 md:pl-0">

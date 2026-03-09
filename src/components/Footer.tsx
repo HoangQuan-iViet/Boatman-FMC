@@ -1,5 +1,5 @@
 
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Facebook } from 'lucide-react';
 
 export const Footer = () => {
     return (
@@ -41,16 +41,20 @@ export const Footer = () => {
                                 <Mail className="text-fmc-orange shrink-0" size={18} />
                                 <span>info.fmcvietnam@gmail.com</span>
                             </li>
+                            <li className="flex items-center gap-3 text-sm hover:text-white transition-colors">
+                                <Facebook className="text-fmc-orange shrink-0" size={18} />
+                                <span>Olympic Toán FMC</span>
+                            </li>
                         </ul>
                     </div>
 
                     {/* Quick Links / CTA */}
                     <div>
-                        <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider">Hỗ Trợ Nhanh</h3>
+                        <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider">Đăng Ký Tham Gia</h3>
                         <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700">
-                            <p className="text-sm mb-4">Bạn cần hỗ trợ thêm về thể lệ và quy trình đăng ký thi? Đừng ngần ngại liên hệ.</p>
-                            <a href="#register" className="block w-full text-center bg-transparent border border-fmc-lime text-fmc-lime font-bold py-2 rounded-lg hover:bg-fmc-lime hover:text-fmc-dark transition-colors">
-                                Trang Thanh Toán Lệ Phí
+                            <p className="text-sm mb-4">Hãy tham gia giao lưu và chinh phục thử thách tại Kỳ thi Toán học Quốc tế Factorial ngay hôm nay.</p>
+                            <a href="#register" className="block w-full text-center bg-fmc-lime text-fmc-dark font-bold py-3 rounded-lg hover:bg-lime-400 transition-colors shadow-lg shadow-fmc-lime/20 cursor-pointer">
+                                Đăng Ký Ngay
                             </a>
                         </div>
                     </div>

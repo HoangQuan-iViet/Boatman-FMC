@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { MathBackground } from './MathBackground';
+
 
 const faqs = [
     {
@@ -26,13 +26,22 @@ export const FaqSection = () => {
     const [openIndex, setOpenIndex] = useState<number | null>(0);
 
     return (
-        <section className="py-20 relative overflow-hidden bg-fmc-sec-6">
-            <MathBackground pattern="symbols" opacity={0.05} />
+        <section className="py-20 relative overflow-hidden bg-[#c2db14]">
             <div className="container mx-auto px-4 md:px-8 max-w-4xl relative z-10">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-4">Câu Hỏi Thường Gặp (FAQ)</h2>
-                    <p className="text-gray-600">Giải đáp nhanh những thắc mắc của Phụ huynh và Học sinh về Kỳ thi FMC 2026</p>
-                </div>
+                {/* Header Frame (Matches AboutSection/LevelsSection) */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white/95 backdrop-blur-md p-6 md:p-8 text-center rounded-[30px] shadow-xl border-4 border-white mb-10 w-full max-w-4xl mx-auto relative overflow-hidden"
+                >
+                    <span className="text-fmc-orange font-bold tracking-wider uppercase text-base mb-1 block drop-shadow-sm">Giải đáp thắc mắc</span>
+                    <h2 className="text-2xl md:text-4xl font-black text-fmc-dark mb-3 drop-shadow-sm uppercase tracking-tight">Câu Hỏi Thường Gặp (FAQ)</h2>
+                    <p className="text-gray-700 text-base font-medium max-w-3xl mx-auto leading-relaxed">
+                        Giải đáp nhanh những câu hỏi của Phụ huynh và Học sinh về Kỳ thi FMC 2026.
+                    </p>
+                </motion.div>
 
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
