@@ -17,8 +17,8 @@ export const HeroSection = () => {
                 />
             </picture>
 
-            {/* Fade transition into the About Section (bg-fmc-sec-1) */}
-            <div className="absolute bottom-0 left-0 w-full h-32 md:h-64 bg-gradient-to-t from-fmc-sec-1 to-transparent pointer-events-none"></div>
+            {/* Fade transition into the About Section (bg-[#aad211]) */}
+            <div className="absolute bottom-0 left-0 w-full h-12 md:h-24 bg-gradient-to-t from-[#aad211] to-transparent pointer-events-none"></div>
         </section>
     );
 };
