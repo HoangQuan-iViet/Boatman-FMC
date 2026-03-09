@@ -17,11 +17,11 @@ export const CurriculumSection = () => {
 
     // 🔴 PLACEHOLDER: BẠN SẼ THAY ĐỐI ĐƯỜNG LINK GOOGLE DRIVE CỦA BẠN VÀO ĐÂY
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const DRIVE_LINK = "https://drive.google.com/drive/folders/1oZfMzPEyaKxy8ggLKcL5kIwMYP4mlJ3I?usp=drive_link";
+    const DRIVE_LINK = "https://drive.google.com/drive/folders/1x1xk9GrWNvXUxBvpoOidvFowCrfkfHJA?usp=drive_link";
 
     // 🔴 PLACEHOLDER: BẠN SẼ THAY ĐỔI SITE KEY CỦA CLOUDFLARE TURNSTILE VÀO ĐÂY
     // Chuỗi dưới đây là Site Key test mặc định của Cloudflare (luôn pass).
-    const TURNSTILE_SITE_KEY = "0x4AAAAAACnUPwo_dAE0vR1h";
+    const TURNSTILE_SITE_KEY = "0x4AAAAAACnTrnNf9bRNcUTe";
 
     const handleDownloadClick = () => {
         if (isVerified) {

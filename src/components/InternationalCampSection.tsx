@@ -78,7 +78,7 @@ export const InternationalCampSection = () => {
                         <p className="text-gray-600 mb-6">
                             Sẵn sàng cho một mùa hè đáng nhớ mang màu cờ sắc áo Việt Nam tỏa sáng trên đấu trường Quốc Tế.
                         </p>
-                        <a href="#register" className="inline-block bg-fmc-lime text-white font-bold px-8 py-3 rounded-full shadow-lg shadow-lime-500/30 hover:bg-lime-600 transition-colors">
+                        <a href="https://forms.gle/yY2Jzd83Q612yCRGA" target="_blank" rel="noopener noreferrer" className="inline-block bg-fmc-lime text-white font-bold px-8 py-3 rounded-full shadow-lg shadow-lime-500/30 hover:bg-lime-600 transition-colors">
                             Đăng Ký Khảo Sát Ngay
                         </a>
                     </div>

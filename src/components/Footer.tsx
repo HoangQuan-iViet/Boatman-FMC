@@ -53,7 +53,7 @@ export const Footer = () => {
                         <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider">Đăng Ký Tham Gia</h3>
                         <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700">
                             <p className="text-sm mb-4">Hãy tham gia giao lưu và chinh phục thử thách tại Kỳ thi Toán học Quốc tế Factorial ngay hôm nay.</p>
-                            <a href="#register" className="block w-full text-center bg-fmc-lime text-fmc-dark font-bold py-3 rounded-lg hover:bg-lime-400 transition-colors shadow-lg shadow-fmc-lime/20 cursor-pointer">
+                            <a href="https://forms.gle/yY2Jzd83Q612yCRGA" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-fmc-lime text-fmc-dark font-bold py-3 rounded-lg hover:bg-lime-400 transition-colors shadow-lg shadow-fmc-lime/20 cursor-pointer">
                                 Đăng Ký Ngay
                             </a>
                         </div>
