@@ -74,12 +74,12 @@ export const InternationalCampSection = () => {
                 >
                     <div className="max-w-2xl">
                         <Flag className="w-12 h-12 text-fmc-lime mx-auto mb-4" />
-                        <h3 className="text-2xl font-bold text-gray-800 mb-2">Đăng Ký Khảo Sát & Đại Diện Việt Nam</h3>
+                        <h3 className="text-2xl font-bold text-gray-800 mb-2">Đăng Ký Đại Diện Việt Nam</h3>
                         <p className="text-gray-600 mb-6">
                             Sẵn sàng cho một mùa hè đáng nhớ mang màu cờ sắc áo Việt Nam tỏa sáng trên đấu trường Quốc Tế.
                         </p>
                         <a href="https://forms.gle/yY2Jzd83Q612yCRGA" target="_blank" rel="noopener noreferrer" className="inline-block bg-fmc-lime text-white font-bold px-8 py-3 rounded-full shadow-lg shadow-lime-500/30 hover:bg-lime-600 transition-colors">
-                            Đăng Ký Khảo Sát Ngay
+                            Đăng Ký Ngay
                         </a>
                     </div>
                 </motion.div>

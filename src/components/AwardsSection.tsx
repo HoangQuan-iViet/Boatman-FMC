@@ -15,8 +15,9 @@ export const AwardsSection = () => {
 
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10 w-full">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Hệ Thống Giải Thưởng Vòng Quốc Gia</h2>
-                    <p className="text-gray-300 max-w-2xl mx-auto">
+                    <span className="text-fmc-lime font-bold tracking-wider uppercase text-lg md:text-xl mb-3 block drop-shadow-sm">Vinh Danh Tài Năng</span>
+                    <h2 className="text-3xl md:text-5xl font-black text-white mb-6 drop-shadow-sm uppercase tracking-tight">Hệ Thống Giải Thưởng Vòng Quốc Gia</h2>
+                    <p className="text-gray-300 leading-relaxed text-xl max-w-3xl mx-auto font-medium">
                         Vinh danh những tài năng xuất sắc nhất trên toàn quốc, tạo động lực bứt phá giới hạn.
                     </p>
                 </div>

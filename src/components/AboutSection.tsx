@@ -53,9 +53,11 @@ export const AboutSection = () => {
                         <p className="text-gray-700 leading-relaxed text-xl mb-4">
                             Chúng tôi tin rằng, khi được trao đúng cơ hội và môi trường, tư duy toán học của mỗi học sinh sẽ không chỉ cộng thêm từng ngày, mà sẽ phát triển mạnh mẽ theo cấp số nhân.
                         </p>
-                        <p className="text-gray-700 leading-relaxed text-xl font-medium">
-                            Tham gia FMC 2026 là bước đệm để các em bứt phá giới hạn của bản thân, tự tin bước ra thế giới và ghi dấu ấn cá nhân trên đấu trường quốc tế.
-                        </p>
+                        <div className="mt-8">
+                            <a href="https://forms.gle/vP31LqYofmE4rS7Z8" target="_blank" rel="noopener noreferrer" className="inline-block bg-fmc-orange hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-full text-xl uppercase tracking-wider shadow-[0_10px_30px_-10px_rgba(255,107,0,0.6)] hover:shadow-[0_15px_40px_-10px_rgba(255,107,0,0.8)] hover:-translate-y-1 transition-all duration-300">
+                                Đăng ký ngay
+                            </a>
+                        </div>
                     </div>
 
                 </div>
