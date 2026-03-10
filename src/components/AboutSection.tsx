@@ -4,9 +4,9 @@ import { MathBackground } from './MathBackground';
 
 export const AboutSection = () => {
     return (
-        <section id="about" className="py-20 relative overflow-hidden bg-[#aad211]">
+        <section id="about" className="py-10 md:py-20 min-h-[auto] md:min-h-[90vh] flex items-center relative overflow-hidden bg-[#aad211]">
             <MathBackground pattern="symbols" opacity={0.06} />
-            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
+            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10 w-full">
 
                 {/* Master Frame Container */}
                 <motion.div

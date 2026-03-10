@@ -6,6 +6,7 @@ import { RoadmapSection } from './components/RoadmapSection'
 import { AwardsSection } from './components/AwardsSection'
 import { CurriculumSection } from './components/CurriculumSection'
 import { InternationalCampSection } from './components/InternationalCampSection'
+import { GallerySection } from './components/GallerySection'
 import { PaymentSection } from './components/PaymentSection'
 import { FaqSection } from './components/FaqSection'
 import { Footer } from './components/Footer'
@@ -20,6 +21,7 @@ const App: React.FC = () => {
       <AwardsSection />
       <CurriculumSection />
       <InternationalCampSection />
+      <GallerySection />
       <PaymentSection />
       <FaqSection />
       <Footer />

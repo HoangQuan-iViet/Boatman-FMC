@@ -11,8 +11,8 @@ const levels = [
 
 export const LevelsSection = () => {
     return (
-        <section className="py-20 relative overflow-hidden bg-[#bede12]">
-            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
+        <section id="levels" className="py-10 md:py-20 min-h-[auto] md:min-h-[90vh] flex items-center relative overflow-hidden bg-[#bede12]">
+            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10 w-full">
                 {/* Header Frame */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

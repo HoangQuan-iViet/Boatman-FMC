@@ -10,10 +10,10 @@ const awards = [
 
 export const AwardsSection = () => {
     return (
-        <section className="py-20 bg-fmc-dark relative overflow-hidden">
+        <section className="py-10 md:py-20 min-h-[auto] md:min-h-[90vh] flex items-center bg-fmc-dark relative overflow-hidden">
             <MathBackground pattern="geometry" opacity={0.03} />
 
-            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
+            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10 w-full">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Hệ Thống Giải Thưởng Vòng Quốc Gia</h2>
                     <p className="text-gray-300 max-w-2xl mx-auto">

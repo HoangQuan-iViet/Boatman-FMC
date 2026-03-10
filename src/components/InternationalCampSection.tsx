@@ -12,9 +12,9 @@ const schedule = [
 
 export const InternationalCampSection = () => {
     return (
-        <section className="py-20 relative overflow-hidden bg-[#bede12]">
+        <section className="py-10 md:py-20 min-h-[auto] md:min-h-[90vh] flex items-center relative overflow-hidden bg-[#bede12]">
             <MathBackground pattern="equations" opacity={0.06} />
-            <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10">
+            <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10 w-full">
                 {/* Header Frame (Matches LevelsSection/RoadmapSection) */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
