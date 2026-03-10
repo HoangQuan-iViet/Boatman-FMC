@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Calculator, Divide, Edit3, Grid, X, Download } from 'lucide-react';
+import { Calculator, Divide, Triangle, Grid, X, Download } from 'lucide-react';
 import { MathBackground } from './MathBackground';
 import { Turnstile } from '@marsidev/react-turnstile';
 
 const topics = [
-    { id: 1, title: 'Đại số', icon: Calculator, desc: 'Tư duy logic và biến đổi đại số chuyên sâu.', color: 'text-blue-500', bg: 'bg-blue-50' },
-    { id: 2, title: 'Lý thuyết số', icon: Divide, desc: 'Các định lý, số nguyên tố và tính chia hết.', color: 'text-purple-500', bg: 'bg-purple-50' },
-    { id: 3, title: 'Hình học', icon: Edit3, desc: 'Không gian, mặt phẳng và các bất đẳng thức hình học.', color: 'text-fmc-lime', bg: 'bg-lime-50' },
-    { id: 4, title: 'Tổ hợp', icon: Grid, desc: 'Xác suất, bài toán đếm và nguyên lý Dirichlet.', color: 'text-fmc-orange', bg: 'bg-orange-50' },
+    { id: 1, title: 'Đại số', icon: Calculator, desc: 'Tư duy logic và biến đổi đại số chuyên sâu.', color: 'text-blue-500', bg: 'bg-blue-50', border: 'border-blue-500', hoverText: 'group-hover:text-blue-500' },
+    { id: 2, title: 'Lý thuyết số', icon: Divide, desc: 'Các định lý, số nguyên tố và tính chia hết.', color: 'text-purple-500', bg: 'bg-purple-50', border: 'border-purple-500', hoverText: 'group-hover:text-purple-500' },
+    { id: 3, title: 'Hình học', icon: Triangle, desc: 'Không gian, mặt phẳng và các bất đẳng thức hình học.', color: 'text-fmc-lime', bg: 'bg-lime-50', border: 'border-fmc-lime', hoverText: 'group-hover:text-fmc-lime' },
+    { id: 4, title: 'Tổ hợp', icon: Grid, desc: 'Xác suất, bài toán đếm và nguyên lý Dirichlet.', color: 'text-fmc-orange', bg: 'bg-orange-50', border: 'border-fmc-orange', hoverText: 'group-hover:text-fmc-orange' },
 ];
 
 export const CurriculumSection = () => {
@@ -42,48 +42,55 @@ export const CurriculumSection = () => {
     return (
         <section className="py-10 md:py-20 min-h-[auto] md:min-h-[90vh] flex items-center relative overflow-hidden bg-[#d2ea16]">
             <MathBackground pattern="geometry" opacity={0.05} />
-            <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10 w-full">
-                <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="container mx-auto px-4 md:px-8 max-w-7xl relative z-10 w-full">
+                {/* Master Frame Container */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="bg-white/95 backdrop-blur-md p-8 md:p-14 rounded-[40px] shadow-2xl border-8 border-white relative overflow-hidden"
+                >
+                    <div className="flex flex-col md:flex-row gap-12 items-center">
 
-                    <div className="w-full md:w-1/3">
-                        <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-sm border border-white">
-                            <span className="text-fmc-lime font-bold tracking-wider uppercase text-sm mb-2 block">Cấu trúc đề thi</span>
-                            <h2 className="text-3xl md:text-4xl font-bold text-fmc-dark mb-6">Chương Trình Học & Đề Cương</h2>
-                            <p className="text-gray-600 mb-8">
+                        <div className="w-full md:w-1/3 flex flex-col justify-center text-center md:text-left">
+                            <span className="text-fmc-orange font-bold tracking-wider uppercase text-lg md:text-xl mb-3 block drop-shadow-sm">Cấu trúc đề thi</span>
+                            <h2 className="text-3xl md:text-5xl font-black text-fmc-lime mb-6 drop-shadow-sm uppercase tracking-tight">Chương Trình Học & Đề Cương</h2>
+                            <p className="text-gray-700 leading-relaxed text-xl mb-8 font-medium">
                                 Nội dung thi bao gồm 4 mảng kiến thức trọng tâm, được thiết kế theo chuẩn toán học quốc tế nhằm mang tới những thử thách phân loại đa dạng nhất.
                             </p>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={handleDownloadClick}
-                                className="inline-flex items-center gap-2 bg-white text-fmc-dark font-bold px-6 py-3 rounded-full border-2 border-fmc-lime hover:bg-fmc-lime hover:text-white transition-colors shadow-sm cursor-pointer"
-                            >
-                                <Download size={20} />
-                                {isVerified ? 'Mở Lại Google Drive' : 'Tải Đề Cương Chi Tiết'}
-                            </motion.button>
+                            <div className="flex justify-center md:justify-start">
+                                <motion.button
+                                    onClick={handleDownloadClick}
+                                    className="inline-flex items-center justify-center gap-2 bg-fmc-orange hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-full text-lg md:text-xl uppercase tracking-wider shadow-[0_10px_30px_-10px_rgba(255,107,0,0.6)] hover:shadow-[0_15px_40px_-10px_rgba(255,107,0,0.8)] hover:-translate-y-1 transition-all duration-300 cursor-pointer w-full md:w-auto"
+                                >
+                                    <Download size={24} />
+                                    {isVerified ? 'Mở Kho Tài Liệu' : 'Tải Đề Cương'}
+                                </motion.button>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        {topics.map((item, index) => (
-                            <motion.div
-                                key={item.id}
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-white p-6 rounded-3xl shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300"
-                            >
-                                <div className={`w-14 h-14 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center mb-4`}>
-                                    <item.icon size={28} />
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
-                                <p className="text-gray-600 text-sm">{item.desc}</p>
-                            </motion.div>
-                        ))}
-                    </div>
+                        <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+                            {topics.map((item, index) => (
+                                <motion.div
+                                    key={item.id}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    className={`bg-white p-6 md:p-8 rounded-3xl shadow-xl border-2 ${item.border} flex flex-col items-center justify-center text-center group hover:-translate-y-2 hover:shadow-2xl transition-all duration-300`}
+                                >
+                                    <div className={`w-20 h-20 rounded-2xl ${item.bg} ${item.color} flex items-center justify-center mb-6 shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300`}>
+                                        <item.icon size={36} />
+                                    </div>
+                                    <h3 className={`text-2xl font-bold text-gray-800 mb-3 ${item.hoverText} transition-colors`}>{item.title}</h3>
+                                    <p className="text-gray-700 font-medium text-base">{item.desc}</p>
+                                </motion.div>
+                            ))}
+                        </div>
 
-                </div>
+                    </div>
+                </motion.div>
             </div>
 
             {/* Turnstile Security Modal */}

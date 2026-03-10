@@ -17,7 +17,7 @@ export const AwardsSection = () => {
                 <div className="text-center mb-16">
                     <span className="text-fmc-lime font-bold tracking-wider uppercase text-lg md:text-xl mb-3 block drop-shadow-sm">Vinh Danh Tài Năng</span>
                     <h2 className="text-3xl md:text-5xl font-black text-white mb-6 drop-shadow-sm uppercase tracking-tight">Hệ Thống Giải Thưởng Vòng Quốc Gia</h2>
-                    <p className="text-gray-300 leading-relaxed text-xl max-w-3xl mx-auto font-medium">
+                    <p className="text-gray-300 leading-relaxed text-xl max-w-4xl mx-auto font-medium lg:whitespace-nowrap">
                         Vinh danh những tài năng xuất sắc nhất trên toàn quốc, tạo động lực bứt phá giới hạn.
                     </p>
                 </div>
@@ -30,7 +30,7 @@ export const AwardsSection = () => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
-                            whileHover={{ y: -5 }}
+                            whileHover={{ y: -10, transition: { duration: 0.2 } }}
                             className={`bg-gradient-to-br ${award.color} rounded-3xl p-6 shadow-2xl relative overflow-hidden flex flex-col items-center justify-center text-center`}
                         >
                             <div className="w-24 h-24 rounded-full bg-white/40 backdrop-blur-md flex items-center justify-center mb-4 shadow-inner border border-white/60 p-4">
