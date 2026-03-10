@@ -35,7 +35,7 @@ export const Footer = () => {
                             </li>
                             <li className="flex items-center gap-3 text-sm hover:text-white transition-colors">
                                 <Phone className="text-fmc-orange shrink-0" size={18} />
-                                <span>0987 53 1953 - 0986 68 1911</span>
+                                <span>09.11.66.1911</span>
                             </li>
                             <li className="flex items-center gap-3 text-sm hover:text-white transition-colors">
                                 <Mail className="text-fmc-orange shrink-0" size={18} />
@@ -53,8 +53,16 @@ export const Footer = () => {
                         <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider">Đăng Ký Tham Gia</h3>
                         <div className="bg-gray-800 p-6 rounded-2xl border border-gray-700">
                             <p className="text-sm mb-4">Hãy tham gia giao lưu và chinh phục thử thách tại Kỳ thi Toán học Quốc tế Factorial ngay hôm nay.</p>
-                            <a href="https://forms.gle/yY2Jzd83Q612yCRGA" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-fmc-lime text-fmc-dark font-bold py-3 rounded-lg hover:bg-lime-400 transition-colors shadow-lg shadow-fmc-lime/20 cursor-pointer">
-                                Đăng Ký Ngay
+                            <a
+                                href="https://forms.gle/yY2Jzd83Q612yCRGA"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block w-full text-center bg-gradient-to-r from-fmc-orange to-orange-500 text-white font-black py-4
+                                rounded-xl drop-shadow-[0_0_15px_rgba(255,107,0,0.4)] border border-white/30
+                                hover:shadow-[0_0_25px_rgba(255,107,0,0.6)] hover:border-white transition-all
+                                hover:scale-[1.02] active:scale-95 duration-300 uppercase tracking-widest text-lg md:text-xl"
+                            >
+                                ĐĂNG KÝ NGAY
                             </a>
                         </div>
                     </div>

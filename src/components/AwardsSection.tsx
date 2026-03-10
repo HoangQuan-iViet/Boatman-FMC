@@ -82,9 +82,13 @@ export const AwardsSection = () => {
                         href="https://forms.gle/yY2Jzd83Q612yCRGA"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-gradient-to-r from-fmc-lime to-lime-500 text-fmc-dark font-black text-lg md:text-xl px-10 py-4 rounded-full shadow-[0_0_20px_rgba(170,210,17,0.4)] border-2 border-transparent hover:border-white/50 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(170,210,17,0.7)] transition-all uppercase tracking-wide"
+                        className="inline-flex items-center justify-center bg-gradient-to-r from-fmc-orange to-orange-500 text-white font-black 
+                               text-lg md:text-xl lg:text-2xl px-10 py-4 md:px-14 md:py-5
+                               rounded-full shadow-[0_0_20px_rgba(255,107,0,0.6)] border-2 border-white/50
+                               hover:shadow-[0_0_30px_rgba(255,107,0,0.8)] hover:border-white transition-all
+                               hover:scale-105 active:scale-95 duration-300"
                     >
-                        Đăng Ký Ngay
+                        ĐĂNG KÝ NGAY
                     </a>
                 </motion.div>
             </div>

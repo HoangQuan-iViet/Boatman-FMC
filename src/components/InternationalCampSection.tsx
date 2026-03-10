@@ -91,6 +91,28 @@ export const InternationalCampSection = () => {
                             </motion.div>
                         ))}
                     </div>
+
+                    {/* Registration CTA Container */}
+                    <motion.div
+                        className="mt-16 text-center"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                        <a
+                            href="https://forms.gle/yY2Jzd83Q612yCRGA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center bg-gradient-to-r from-fmc-orange to-orange-500 text-white font-black 
+                               text-lg md:text-xl lg:text-2xl px-10 py-4 md:px-14 md:py-5
+                               rounded-full shadow-[0_0_20px_rgba(255,107,0,0.6)] border-2 border-white/50
+                               hover:shadow-[0_0_30px_rgba(255,107,0,0.8)] hover:border-white transition-all
+                               hover:scale-105 active:scale-95 duration-300"
+                        >
+                            ĐĂNG KÝ NGAY
+                        </a>
+                    </motion.div>
                 </div>
             </div>
         </section>

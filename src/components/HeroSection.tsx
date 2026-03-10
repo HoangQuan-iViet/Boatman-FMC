@@ -22,7 +22,7 @@ export const HeroSection = () => {
                 {/* Floating Hotline Button */}
                 {/* 🔴 CHÚ Ý: ĐIỀU CHỈNH VỊ TRÍ NÚT Ở BÊN TRÁI */}
                 <motion.a
-                    href="tel:0987531953"
+                    href="tel:0911661911"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     whileHover={{ scale: 1.05 }}
@@ -41,7 +41,7 @@ export const HeroSection = () => {
                                hover:shadow-[0_0_30px_rgba(170,210,17,0.8)] hover:border-fmc-lime transition-all
                                flex items-center justify-center whitespace-nowrap"
                 >
-                    Hotline: 0987 53 1953 - 0986 68 1911
+                    Hotline: 09.11.66.1911
                 </motion.a>
 
                 {/* Floating Register CTA Button */}
