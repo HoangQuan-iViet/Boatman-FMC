@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { CreditCard, Building2, Hash, Info } from 'lucide-react';
 import boatmanLogo from '../assets/logo-boatman.png';
+import MBQR from '../assets/MB-QR.png';
 
 export const PaymentSection = () => {
     return (
@@ -29,10 +30,10 @@ export const PaymentSection = () => {
                         <span>Thông Tin Chuyển Khoản</span>
                     </div>
 
-                    <div className="flex justify-center mt-4">
+                    <div className="flex flex-col md:flex-row gap-8 justify-between mt-6">
 
-                        {/* Account Info - Centered completely since QR is gone */}
-                        <div className="w-full space-y-4">
+                        {/* Account Info */}
+                        <div className="w-full md:w-2/3 space-y-4">
 
                             <div className="group bg-gray-50 hover:bg-orange-50 transition-colors rounded-2xl p-4 border border-gray-100 flex items-center justify-center gap-4 text-center">
                                 <div className="w-20 h-10 rounded-lg bg-white border border-orange-100 overflow-hidden shrink-0 group-hover:border-fmc-orange transition-colors">
@@ -86,20 +87,17 @@ export const PaymentSection = () => {
 
                         </div>
 
-                        {/* QR Code Graphic / Representation - TEMPORARILY HIDDEN */}
-                        {/* 
+                        {/* QR Code Graphic */}
                         <div className="w-full md:w-1/3 flex flex-col items-center justify-center p-8 bg-gray-50 rounded-3xl border border-gray-100 border-dashed">
-                            <div className="w-48 h-48 bg-white rounded-2xl shadow-md p-4 mb-6 border border-gray-100 flex items-center justify-center group relative overflow-hidden">
-                                <QrCode size={120} className="text-gray-300 group-hover:text-fmc-lime transition-colors" />
+                            <div className="w-48 h-48 bg-white rounded-2xl shadow-md p-2 mb-6 border border-gray-100 flex items-center justify-center group relative overflow-hidden">
+                                <img src={MBQR} alt="QR Code Thanh Toán" className="w-full h-full object-contain" />
                                 <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-50 pointer-events-none"></div>
                                 <div className="absolute -bottom-2 -right-2 bg-fmc-orange text-white text-xs font-bold px-3 py-1 rounded-tl-xl shadow-md">
                                     Quét QR
                                 </div>
                             </div>
                             <p className="text-gray-500 text-center font-medium">Sử dụng tính năng Quét mã QR trên ứng dụng ngân hàng để thanh toán nhanh.</p>
-                        </div> 
-                        */}
-
+                        </div>
                     </div>
                 </div>
             </div>
