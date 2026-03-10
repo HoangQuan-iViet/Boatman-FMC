@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import type { Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 
 import img1 from '../assets/img/ImgNews-FMC2501.jpg';
@@ -14,31 +13,33 @@ const images = [img1, img2, img3, img4, img5, img6];
 
 export const GallerySection = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [direction, setDirection] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+
+    // Determines maximum slip index based on 4 items per view
+    const itemsPerView = 4;
+    const maxIndex = Math.max(0, images.length - itemsPerView);
 
     // Autoplay functionality
     useEffect(() => {
+        if (isHovered) return; // Pause if hovered
         const timer = setInterval(() => {
             nextSlide();
         }, 5000);
         return () => clearInterval(timer);
-    }, [currentIndex]);
-
-    const slideVariants: Variants = {
-        hiddenRight: { x: '100%', opacity: 0 },
-        hiddenLeft: { x: '-100%', opacity: 0 },
-        visible: { x: '0', opacity: 1, transition: { duration: 0.6 } },
-        exit: { opacity: 0, scale: 0.95, transition: { duration: 0.4 } },
-    };
+    }, [currentIndex, isHovered]);
 
     const nextSlide = () => {
-        setDirection(1);
-        setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+        setCurrentIndex((prevIndex) => {
+            if (prevIndex >= maxIndex) return 0;
+            return prevIndex + 1;
+        });
     };
 
     const prevSlide = () => {
-        setDirection(-1);
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+        setCurrentIndex((prevIndex) => {
+            if (prevIndex <= 0) return maxIndex;
+            return prevIndex - 1;
+        });
     };
 
     return (
@@ -51,9 +52,9 @@ export const GallerySection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="inline-flex items-center justify-center space-x-2 bg-white/10 text-fmc-lime px-4 py-2 rounded-full mb-6 font-semibold backdrop-blur-sm border border-white/20"
+                        className="inline-flex items-center justify-center space-x-2 bg-white/10 text-fmc-orange px-4 py-2 rounded-full mb-6 font-semibold backdrop-blur-sm border border-white/20 uppercase tracking-wider text-lg md:text-xl drop-shadow-sm"
                     >
-                        <Camera size={18} />
+                        <Camera size={22} className="inline-block" />
                         <span>Khoảnh khắc ấn tượng</span>
                     </motion.div>
 
@@ -62,7 +63,7 @@ export const GallerySection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight"
+                        className="text-3xl md:text-5xl font-black text-fmc-lime mb-6 uppercase tracking-tight drop-shadow-sm"
                     >
                         Hình Ảnh Minh Họa Cuộc Thi
                     </motion.h2>
@@ -71,58 +72,65 @@ export const GallerySection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-gray-300 text-lg font-medium max-w-3xl mx-auto"
+                        className="text-gray-300 leading-relaxed text-xl mb-8 font-medium max-w-3xl mx-auto"
                     >
                         Những góc nhìn chân thực, quy mô tổ chức chuyên nghiệp và không khí sôi động từ các vòng thi của Factorial Math Competition.
                     </motion.p>
                 </div>
 
                 {/* Carousel Container */}
-                <div className="relative max-w-3xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl bg-black/50 aspect-video border-4 border-white/10 group">
-                    <AnimatePresence initial={false} custom={direction} mode="popLayout">
-                        <motion.img
-                            key={currentIndex}
-                            src={images[currentIndex]}
-                            alt={`Hình ảnh cuộc thi ${currentIndex + 1}`}
-                            custom={direction}
-                            variants={slideVariants}
-                            initial={direction > 0 ? 'hiddenRight' : 'hiddenLeft'}
-                            animate="visible"
-                            exit="exit"
-                            className="absolute inset-0 w-full h-full object-cover"
-                        />
-                    </AnimatePresence>
+                <div
+                    className="relative max-w-6xl mx-auto group"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    <div className="overflow-hidden p-2">
+                        {/* We use a motion.div as a sliding track. With w-full, percentage translation translates relative to the container. */}
+                        <motion.div
+                            className="flex w-full"
+                            animate={{ x: `-${currentIndex * (100 / itemsPerView)}%` }}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        >
+                            {images.map((imgSrc, idx) => (
+                                <div key={idx} className="flex-none p-2 w-[100%] sm:w-[50%] md:w-[25%] lg:w-[25%]">
+                                    <div className="bg-white shadow-lg border-2 border-white/40 transform hover:-translate-y-2 transition-transform duration-300 aspect-square md:aspect-[3/4] lg:aspect-square relative overflow-hidden group/img">
+                                        <img src={imgSrc} alt={`Hình ảnh cuộc thi ${idx + 1}`} className="w-full h-full object-cover" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-fmc-dark/80 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                            <Camera className="text-white w-8 h-8 opacity-80" />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </motion.div>
+                    </div>
 
                     {/* Navigation Buttons */}
-                    <div className="absolute inset-0 flex items-center justify-between px-4 md:px-6 pointer-events-none">
+                    <div className="absolute inset-y-0 -left-4 md:-left-12 -right-4 md:-right-12 flex items-center justify-between pointer-events-none">
                         <button
                             onClick={(e) => { e.preventDefault(); prevSlide(); }}
-                            className="pointer-events-auto bg-black/40 hover:bg-fmc-lime hover:text-fmc-dark text-white p-3 md:p-4 rounded-full backdrop-blur-sm transition-all shadow-lg transform -translate-x-10 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"
+                            className="pointer-events-auto bg-white hover:bg-fmc-lime text-fmc-dark p-3 md:p-4 rounded-full transition-all shadow-xl opacity-0 group-hover:opacity-100 transform -translate-x-4 group-hover:translate-x-0 border border-gray-100 hover:border-transparent hover:text-white"
                             aria-label="Previous Slide"
                         >
-                            <ChevronLeft size={28} className="md:w-8 md:h-8" />
+                            <ChevronLeft size={28} className="md:w-6 md:h-6" />
                         </button>
                         <button
                             onClick={(e) => { e.preventDefault(); nextSlide(); }}
-                            className="pointer-events-auto bg-black/40 hover:bg-fmc-orange hover:text-white text-white p-3 md:p-4 rounded-full backdrop-blur-sm transition-all shadow-lg transform translate-x-10 group-hover:translate-x-0 opacity-0 group-hover:opacity-100"
+                            className="pointer-events-auto bg-white hover:bg-fmc-orange text-fmc-dark p-3 md:p-4 rounded-full transition-all shadow-xl opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 border border-gray-100 hover:border-transparent hover:text-white"
                             aria-label="Next Slide"
                         >
-                            <ChevronRight size={28} className="md:w-8 md:h-8" />
+                            <ChevronRight size={28} className="md:w-6 md:h-6" />
                         </button>
                     </div>
 
                     {/* Indicators */}
-                    <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 md:gap-3 z-20">
-                        {images.map((_, index) => (
+                    <div className="flex justify-center mt-8 gap-2 md:gap-3 z-20 relative">
+                        {Array.from({ length: maxIndex + 1 }).map((_, index) => (
                             <button
                                 key={index}
-                                onClick={() => {
-                                    setDirection(index > currentIndex ? 1 : -1);
-                                    setCurrentIndex(index);
-                                }}
-                                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                                    ? 'w-8 bg-fmc-lime shadow-[0_0_10px_rgba(170,210,17,0.8)]'
-                                    : 'w-2 bg-white/50 hover:bg-white/80'
+                                onClick={() => setCurrentIndex(index)}
+                                className={`h-3 rounded-full transition-all duration-300 ${currentIndex === index
+                                    ? 'w-10 bg-fmc-lime shadow-[0_0_10px_rgba(170,210,17,0.8)]'
+                                    : 'w-3 bg-white/30 hover:bg-white/60'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />

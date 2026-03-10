@@ -23,7 +23,7 @@ const App: React.FC = () => {
       <InternationalCampSection />
       <GallerySection />
       <PaymentSection />
-      <FaqSection />
+      {/* <FaqSection /> */}
       <Footer />
     </div>
   )
