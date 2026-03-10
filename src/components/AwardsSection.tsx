@@ -68,6 +68,24 @@ export const AwardsSection = () => {
                         </p>
                     </div>
                 </motion.div>
+
+                {/* Call To Action */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="mt-12 text-center"
+                >
+                    <a
+                        href="https://forms.gle/yY2Jzd83Q612yCRGA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-gradient-to-r from-fmc-lime to-lime-500 text-fmc-dark font-black text-lg md:text-xl px-10 py-4 rounded-full shadow-[0_0_20px_rgba(170,210,17,0.4)] border-2 border-transparent hover:border-white/50 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(170,210,17,0.7)] transition-all uppercase tracking-wide"
+                    >
+                        Đăng Ký Ngay
+                    </a>
+                </motion.div>
             </div>
         </section>
     );

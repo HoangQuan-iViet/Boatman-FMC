@@ -45,7 +45,7 @@ export const InternationalCampSection = () => {
                                 className="relative md:flex items-center justify-between"
                             >
                                 {/* Connector Line for Desktop */}
-                                <div className="hidden md:block absolute left-1/2 top-1/2 h-0.5 w-full bg-gray-100 -translate-y-1/2 -z-10"></div>
+                                <div className={`hidden md:block absolute top-1/2 h-0.5 w-1/2 bg-gray-100 -translate-y-1/2 -z-10 ${index % 2 === 0 ? 'left-1/2' : 'right-1/2'}`}></div>
 
                                 {/* Timeline Dot / Icon */}
                                 <div className="absolute -left-[45px] md:left-1/2 md:-translate-x-1/2 top-0 md:top-auto w-10 h-10 bg-white border-2 border-fmc-lime rounded-full flex items-center justify-center shadow-lg z-10 text-fmc-lime">
