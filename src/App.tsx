@@ -8,8 +8,8 @@ import { CurriculumSection } from './components/CurriculumSection'
 import { InternationalCampSection } from './components/InternationalCampSection'
 import { GallerySection } from './components/GallerySection'
 import { PaymentSection } from './components/PaymentSection'
-import { FaqSection } from './components/FaqSection'
 import { Footer } from './components/Footer'
+import { FloatingContact } from './components/FloatingContact'
 
 const App: React.FC = () => {
   return (
@@ -25,6 +25,7 @@ const App: React.FC = () => {
       <PaymentSection />
       {/* <FaqSection /> */}
       <Footer />
+      <FloatingContact />
     </div>
   )
 }

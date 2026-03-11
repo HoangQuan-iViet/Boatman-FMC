@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Facebook } from 'lucide-react';
 
 export const Footer = () => {
     return (
-        <footer className="bg-fmc-dark text-gray-300 py-12 border-t-4 border-fmc-orange relative overflow-hidden">
+        <footer className="bg-fmc-dark text-gray-300 pt-12 pb-6 border-t-4 border-fmc-orange relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-fmc-lime/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
             <div className="container mx-auto px-4 md:px-8 max-w-6xl relative z-10">
@@ -41,9 +41,17 @@ export const Footer = () => {
                                 <Mail className="text-fmc-orange shrink-0" size={18} />
                                 <span>info.fmcvietnam@gmail.com</span>
                             </li>
-                            <li className="flex items-center gap-3 text-sm hover:text-white transition-colors">
-                                <Facebook className="text-fmc-orange shrink-0" size={18} />
-                                <span>Olympic Toán FMC</span>
+                            <li className="flex items-center gap-3 text-sm hover:text-white transition-colors group">
+                                <Facebook className="text-fmc-orange shrink-0 group-hover:scale-110 transition-transform" size={18} />
+                                <a
+                                    href="https://www.facebook.com/61568804255968"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-fmc-orange transition-colors"
+                                    title="Truy cập Fanpage Olympic Toán FMC"
+                                >
+                                    Olympic Toán FMC
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -69,7 +77,7 @@ export const Footer = () => {
 
                 </div>
 
-                <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500">
+                <div className="border-t border-gray-800 mt-8 pt-4 flex flex-col items-center justify-center text-sm text-gray-500">
                     <p>© {new Date().getFullYear()} Công ty Cổ phần Boatman. All rights reserved.</p>
                 </div>
             </div>

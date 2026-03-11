@@ -21,7 +21,7 @@ export const CurriculumSection = () => {
 
     // 🔴 PLACEHOLDER: BẠN SẼ THAY ĐỔI SITE KEY CỦA CLOUDFLARE TURNSTILE VÀO ĐÂY
     // Chuỗi dưới đây là Site Key test mặc định của Cloudflare (luôn pass).
-    const TURNSTILE_SITE_KEY = "0x4AAAAAACnTrnNf9bRNcUTe";
+    const TURNSTILE_SITE_KEY = "0x4AAAAAACpAGXJrwhkRN1Jy";
 
     const handleDownloadClick = () => {
         if (isVerified) {
